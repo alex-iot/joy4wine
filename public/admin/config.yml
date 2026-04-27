@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: alex-iot/joy4wine
   branch: main
+  base_url: https://joy4wine.com
+  auth_endpoint: /api/auth
 
 media_folder: public/images
 public_folder: /images
