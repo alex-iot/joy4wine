@@ -8,7 +8,7 @@ export async function onRequest(context) {
     const githubAuthUrl = new URL('https://github.com/login/oauth/authorize');
     githubAuthUrl.searchParams.set('client_id', env.GITHUB_CLIENT_ID);
     githubAuthUrl.searchParams.set('scope', 'repo');
-    githubAuthUrl.searchParams.set('redirect_uri', 'https://joy4wine.com/api/auth');
+    githubAuthUrl.searchParams.set('redirect_uri', 'https://www.joy4wine.com/api/auth');
     return Response.redirect(githubAuthUrl.toString(), 302);
   }
 
@@ -42,7 +42,7 @@ export async function onRequest(context) {
     <script>
       window.opener.postMessage(
         'authorization:github:success:' + ${JSON.stringify(message)},
-        'https://joy4wine.com'
+        'https://www.joy4wine.com'
       );
       window.close();
     <\/script>
