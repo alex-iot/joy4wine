@@ -1,0 +1,37 @@
+---
+import { getCollection } from 'astro:content';
+import PostLayout from '../../layouts/PostLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('bottle-notes', ({ data }) => !data.draft);
+  return entries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+<PostLayout
+  title={entry.data.title}
+  description={`${entry.data.producer} · ${entry.data.grape} · ${entry.data.vintage}`}
+  date={entry.data.date}
+  collection="bottle-notes"
+>
+  <Fragment slot="meta">
+    <div class="post-meta">
+      <span class="post-meta-label">Producer</span>
+      <span class="post-meta-value">{entry.data.producer}</span>
+      <span class="post-meta-label">Region</span>
+      <span class="post-meta-value">{entry.data.region}</span>
+      <span class="post-meta-label">Grape</span>
+      <span class="post-meta-value">{entry.data.grape}</span>
+      <span class="post-meta-label">Vintage</span>
+      <span class="post-meta-value">{entry.data.vintage}</span>
+      <span class="post-meta-label">Price (approx)</span>
+      <span class="post-meta-value">{entry.data.price_approx}</span>
+    </div>
+  </Fragment>
+  <Content />
+</PostLayout>

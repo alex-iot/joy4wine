@@ -1,0 +1,66 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: public/images
+public_folder: /images
+
+collections:
+  - name: "wine-shops"
+    label: "Wine Shops"
+    folder: "src/content/wine-shops"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Location", name: "location", widget: "string", hint: "e.g. Málaga centro" }
+      - { label: "Best For", name: "best_for", widget: "string", hint: "e.g. everyday wine buying, gifts, local Málaga wines" }
+      - { label: "Price Level", name: "price_level", widget: "select", options: ["budget", "mid", "premium"] }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "wineries"
+    label: "Wineries & Producers"
+    folder: "src/content/wineries"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Region", name: "region", widget: "string", hint: "e.g. Ronda, Sierras de Málaga, Axarquía" }
+      - { label: "Grapes", name: "grapes", widget: "string", hint: "e.g. Syrah, Cabernet Sauvignon" }
+      - { label: "Price Range", name: "price_range", widget: "string", hint: "e.g. €8–18" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "guides"
+    label: "Guides"
+    folder: "src/content/guides"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Subtitle", name: "subtitle", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Topic", name: "topic", widget: "string", hint: "e.g. regions, buying wine, grape varieties" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "bottle-notes"
+    label: "Bottle Notes"
+    folder: "src/content/bottle-notes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Producer", name: "producer", widget: "string" }
+      - { label: "Region", name: "region", widget: "string" }
+      - { label: "Grape", name: "grape", widget: "string" }
+      - { label: "Vintage", name: "vintage", widget: "number", value_type: "int" }
+      - { label: "Price (approx)", name: "price_approx", widget: "string", hint: "e.g. €12–15" }
+      - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Draft", name: "draft", widget: "boolean", default: true }
+      - { label: "Body", name: "body", widget: "markdown" }

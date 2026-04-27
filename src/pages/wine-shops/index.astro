@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WineShopIcon from '../../components/icons/WineShopIcon.astro';
+
+const shops = (await getCollection('wine-shops', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const priceLabels: Record<string, string> = {
+  budget: 'Budget',
+  mid: 'Mid-range',
+  premium: 'Premium',
+};
+---
+<BaseLayout
+  title="Wine Shops — Joy4Wine"
+  description="Independent wine shop reviews from Málaga and the Costa del Sol."
+>
+  <div class="page-header">
+    <div class="container">
+      <h1 class="page-header-title"><div class="page-header-icon" style="background:#F5EDE4"><WineShopIcon width={28} height={28} /></div>Wine Shops</h1>
+      <p>Independent shops and bottle stores across Málaga and the coast, reviewed honestly.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      {shops.length > 0 ? (
+        <div class="post-list">
+          {shops.map(shop => (
+            <a href={`/wine-shops/${shop.slug}/`} class="post-item">
+              <div class="post-item-header">
+                <h2 class="post-item-title">{shop.data.title}</h2>
+                <span class="badge">{priceLabels[shop.data.price_level]}</span>
+              </div>
+              <p class="post-item-subtitle">{shop.data.subtitle}</p>
+              <div class="post-item-meta">
+                <span>📍 {shop.data.location}</span>
+                <span>Best for: {shop.data.best_for}</span>
+                <span>{shop.data.date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long' })}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <p>Wine shop reviews are on the way. Check back soon.</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

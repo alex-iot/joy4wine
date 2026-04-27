@@ -1,0 +1,46 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import WineryIcon from '../../components/icons/WineryIcon.astro';
+
+const wineries = (await getCollection('wineries', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+<BaseLayout
+  title="Wineries & Producers — Joy4Wine"
+  description="Local wineries and producers from Ronda, Axarquía, and the wider Sierras de Málaga."
+>
+  <div class="page-header">
+    <div class="container">
+      <h1 class="page-header-title"><div class="page-header-icon" style="background:#F0E4F0"><WineryIcon width={28} height={28} /></div>Wineries &amp; Producers</h1>
+      <p>Local bodegas from Ronda, Axarquía, Sierras de Málaga, and beyond.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      {wineries.length > 0 ? (
+        <div class="post-list">
+          {wineries.map(winery => (
+            <a href={`/wineries/${winery.slug}/`} class="post-item">
+              <div class="post-item-header">
+                <h2 class="post-item-title">{winery.data.title}</h2>
+              </div>
+              <p class="post-item-subtitle">{winery.data.subtitle}</p>
+              <div class="post-item-meta">
+                <span>📍 {winery.data.region}</span>
+                <span>🍇 {winery.data.grapes}</span>
+                <span>{winery.data.price_range}</span>
+                <span>{winery.data.date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long' })}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <p>Winery profiles are on the way. Check back soon.</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

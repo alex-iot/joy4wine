@@ -1,0 +1,30 @@
+---
+import { getCollection } from 'astro:content';
+import PostLayout from '../../layouts/PostLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('guides', ({ data }) => !data.draft);
+  return entries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+<PostLayout
+  title={entry.data.title}
+  description={entry.data.subtitle}
+  date={entry.data.date}
+  collection="guides"
+>
+  <Fragment slot="meta">
+    <p class="post-subtitle">{entry.data.subtitle}</p>
+    <div class="post-meta">
+      <span class="post-meta-label">Topic</span>
+      <span class="post-meta-value">{entry.data.topic}</span>
+    </div>
+  </Fragment>
+  <Content />
+</PostLayout>

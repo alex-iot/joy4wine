@@ -1,0 +1,135 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsletterSignup from '../components/NewsletterSignup.astro';
+import WineShopIcon from '../components/icons/WineShopIcon.astro';
+import WineryIcon from '../components/icons/WineryIcon.astro';
+import GuidesIcon from '../components/icons/GuidesIcon.astro';
+import BottleNotesIcon from '../components/icons/BottleNotesIcon.astro';
+
+const allWineShops = await getCollection('wine-shops', ({ data }) => !data.draft);
+const allWineries   = await getCollection('wineries',   ({ data }) => !data.draft);
+const allGuides     = await getCollection('guides',     ({ data }) => !data.draft);
+const allBottleNotes = await getCollection('bottle-notes', ({ data }) => !data.draft);
+
+const allPosts = [
+  ...allWineShops.map(p => ({ ...p, _collection: 'wine-shops' })),
+  ...allWineries.map(p => ({ ...p, _collection: 'wineries' })),
+  ...allGuides.map(p => ({ ...p, _collection: 'guides' })),
+  ...allBottleNotes.map(p => ({ ...p, _collection: 'bottle-notes' })),
+].sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
+
+function getDescription(post: { data: Record<string, unknown> }): string {
+  if (typeof post.data.subtitle === 'string') return post.data.subtitle;
+  if (typeof post.data.producer === 'string') return `${post.data.producer} · ${post.data.vintage ?? ''}`;
+  return '';
+}
+
+function collectionLabel(col: string): string {
+  const map: Record<string, string> = {
+    'wine-shops': 'Wine Shop',
+    'wineries': 'Winery',
+    'guides': 'Guide',
+    'bottle-notes': 'Bottle Note',
+  };
+  return map[col] ?? col;
+}
+
+---
+<BaseLayout
+  title="Joy4Wine — Málaga Wine Guide"
+  description="A personal editorial guide to wine shops, wineries, and bottles in Málaga and the Costa del Sol."
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-eyebrow">A personal guide · Málaga &amp; Costa del Sol</p>
+      <h1 class="hero-heading">Wine in Málaga, honestly.</h1>
+      <p class="hero-body">
+        Independent notes on wine shops, local producers, and interesting bottles
+        from across the Costa del Sol. Practical, personal, and written without a
+        corporate agenda.
+      </p>
+      <div class="btn-group">
+        <a href="/bottle-notes/" class="btn btn--primary">Read the latest notes</a>
+        <a href="/newsletter/" class="btn btn--secondary">Subscribe by email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest notes -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Latest notes</h2>
+      {allPosts.length > 0 ? (
+        <div class="post-list">
+          {allPosts.map(post => (
+            <a href={`/${post._collection}/${post.slug}/`} class="post-item">
+              <div class="post-item-header">
+                <h3 class="post-item-title">{post.data.title}</h3>
+                <span class="badge">{collectionLabel(post._collection)}</span>
+              </div>
+              {getDescription(post) && (
+                <p class="post-item-subtitle">{getDescription(post)}</p>
+              )}
+              <div class="post-item-meta">
+                <span>{post.data.date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <p>Notes coming soon — check back shortly.</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Category cards -->
+  <section class="section section--warm">
+    <div class="container">
+      <h2 class="section-title">Explore by section</h2>
+      <div class="card-grid">
+        <a href="/wine-shops/" class="card">
+          <div class="card-icon" style="background:#F5EDE4"><WineShopIcon width={32} height={32} /></div>
+          <h3 class="card-title">Wine Shops</h3>
+          <p class="card-description">Independent shops and bottle stores across Málaga and the coast.</p>
+        </a>
+        <a href="/wineries/" class="card">
+          <div class="card-icon" style="background:#F0E4F0"><WineryIcon width={32} height={32} /></div>
+          <h3 class="card-title">Wineries &amp; Producers</h3>
+          <p class="card-description">Local bodegas from Ronda, Axarquía, and beyond.</p>
+        </a>
+        <a href="/guides/" class="card">
+          <div class="card-icon" style="background:#E4EEE8"><GuidesIcon width={32} height={32} /></div>
+          <h3 class="card-title">Guides</h3>
+          <p class="card-description">Practical guides to buying, tasting, and understanding Málaga wine.</p>
+        </a>
+        <a href="/bottle-notes/" class="card">
+          <div class="card-icon" style="background:#EEE4E4"><BottleNotesIcon width={32} height={32} /></div>
+          <h3 class="card-title">Bottle Notes</h3>
+          <p class="card-description">Personal tasting notes on specific bottles, with price context.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About strip -->
+  <section class="about-strip">
+    <div class="container">
+      <h2>About this guide</h2>
+      <p>
+        I recently moved to Málaga and started exploring the wine scene across the Costa del Sol.
+        Joy4Wine is my personal record of that discovery — wine shops, wineries, bottles, and
+        local observations, written mainly for international residents and visitors who want
+        clear, practical information in English.
+      </p>
+      <a href="/about/" class="btn btn--secondary" style="margin-top:1.25rem;">Read more →</a>
+      <p class="credential">Written by a Málaga-based wine enthusiast currently working towards the WSET Diploma.</p>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <NewsletterSignup dark={true} />
+</BaseLayout>

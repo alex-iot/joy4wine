@@ -1,0 +1,22 @@
+---
+const navLinks = [
+  { href: '/wine-shops/', label: 'Wine Shops' },
+  { href: '/wineries/', label: 'Wineries' },
+  { href: '/guides/', label: 'Guides' },
+  { href: '/bottle-notes/', label: 'Bottle Notes' },
+  { href: '/about/', label: 'About' },
+];
+---
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="/" class="logo">
+      <span class="logo-text">joy<span class="logo-four">4</span>wine</span>
+      <span class="logo-tagline">Málaga &amp; Costa del Sol</span>
+    </a>
+    <ul class="nav-links">
+      {navLinks.map(link => (
+        <li><a href={link.href}>{link.label}</a></li>
+      ))}
+    </ul>
+  </div>
+</nav>

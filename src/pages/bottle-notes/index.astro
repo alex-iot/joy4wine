@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BottleNotesIcon from '../../components/icons/BottleNotesIcon.astro';
+
+const notes = (await getCollection('bottle-notes', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+---
+<BaseLayout
+  title="Bottle Notes — Joy4Wine"
+  description="Personal tasting notes on specific bottles from Málaga and beyond."
+>
+  <div class="page-header">
+    <div class="container">
+      <h1 class="page-header-title"><div class="page-header-icon" style="background:#EEE4E4"><BottleNotesIcon width={28} height={28} /></div>Bottle Notes</h1>
+      <p>Personal tasting notes on specific bottles, with region, grape, and price context.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      {notes.length > 0 ? (
+        <div class="post-list">
+          {notes.map(note => (
+            <a href={`/bottle-notes/${note.slug}/`} class="post-item">
+              <div class="post-item-header">
+                <h2 class="post-item-title">{note.data.title}</h2>
+                <span class="badge">{note.data.vintage}</span>
+              </div>
+              <p class="post-item-subtitle">{note.data.producer}</p>
+              <div class="post-item-meta">
+                <span>📍 {note.data.region}</span>
+                <span>🍇 {note.data.grape}</span>
+                <span>{note.data.price_approx}</span>
+                <span>{note.data.date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long' })}</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <p>Bottle notes are on the way. Check back soon.</p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

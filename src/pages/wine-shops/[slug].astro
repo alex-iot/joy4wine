@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import PostLayout from '../../layouts/PostLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('wine-shops', ({ data }) => !data.draft);
+  return entries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const priceLabels: Record<string, string> = {
+  budget: 'Budget',
+  mid: 'Mid-range',
+  premium: 'Premium',
+};
+---
+<PostLayout
+  title={entry.data.title}
+  description={entry.data.subtitle}
+  date={entry.data.date}
+  collection="wine-shops"
+>
+  <Fragment slot="meta">
+    <p class="post-subtitle">{entry.data.subtitle}</p>
+    <div class="post-meta">
+      <span class="post-meta-label">Location</span>
+      <span class="post-meta-value">{entry.data.location}</span>
+      <span class="post-meta-label">Best for</span>
+      <span class="post-meta-value">{entry.data.best_for}</span>
+      <span class="post-meta-label">Price level</span>
+      <span class="post-meta-value">{priceLabels[entry.data.price_level]}</span>
+    </div>
+  </Fragment>
+  <Content />
+</PostLayout>

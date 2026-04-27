@@ -1,0 +1,31 @@
+---
+interface Props {
+  dark?: boolean;
+}
+const { dark = false } = Astro.props;
+---
+<div class={dark ? 'section section--dark' : 'section section--warm'}>
+  <div class="container--narrow">
+    <p class="hero-eyebrow" style={dark ? 'color: var(--color-accent-muted)' : ''}>Newsletter</p>
+    <h2 class="section-title">Stay in the loop</h2>
+    <p class="section-lead">
+      New wine shops, bottle notes, and guides — straight to your inbox.
+      No noise, just honest notes from Málaga.
+    </p>
+    <form class="newsletter-form" name="newsletter" method="POST" action="/newsletter/">
+      <input
+        class="newsletter-input"
+        type="email"
+        name="email"
+        placeholder="your@email.com"
+        required
+        aria-label="Email address"
+        style={dark ? '' : 'background: var(--color-bg-white); color: var(--color-text-primary); border-color: var(--color-border);'}
+      />
+      <button type="submit" class="btn btn--primary">Subscribe</button>
+    </form>
+    <p class="newsletter-note" style={dark ? '' : 'color: var(--color-text-muted)'}>
+      No spam. Unsubscribe at any time.
+    </p>
+  </div>
+</div>
