@@ -1,11 +1,12 @@
 ---
-title: "La Vinoteca de Málaga"
-subtitle: "A warm corner wine shop in the old town with a strong selection of local bottles"
+title: La Vinoteca de Málaga
+subtitle: A warm corner wine shop in the old town with a strong selection of
+  local bottles
 date: 2025-01-20
-location: "Málaga centro"
-best_for: "everyday wine buying, gifts, local Málaga wines"
-price_level: "mid"
-draft: true
+location: Málaga centro
+best_for: everyday wine buying, gifts, local Málaga wines
+price_level: mid
+draft: false
 ---
 
 Placeholder entry. La Vinoteca de Málaga sits just off the main pedestrian strip in the old town, tucked into a narrow street that rewards exploration. The shop stocks a well-curated mix of bottles from across Spain, with a notably strong section dedicated to Sierras de Málaga DO — rare for a shop of this size.
