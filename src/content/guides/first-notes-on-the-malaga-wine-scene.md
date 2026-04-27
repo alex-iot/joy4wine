@@ -1,9 +1,9 @@
 ---
-title: "First notes on the Málaga wine scene"
-subtitle: "Early impressions after arriving in the city and starting to explore"
+title: First notes on the Málaga wine scene
+subtitle: Early impressions after arriving in the city and starting to explore
 date: 2025-01-03
-topic: "regions"
-draft: true
+topic: regions
+draft: false
 ---
 
 Stub article. Coming soon.
