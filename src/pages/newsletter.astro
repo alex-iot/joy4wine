@@ -23,12 +23,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         No spam. No selling your data. Unsubscribe at any time.
       </p>
 
-      <!-- Placeholder: replace with MailerLite embed -->
-      <div style="margin-top:2.5rem; padding:2rem; border:1px solid var(--color-border); border-radius:8px; background:var(--color-bg-warm);">
-        <p style="color:var(--color-text-muted); font-size:0.875rem; margin:0;">
-          Newsletter signup form will appear here once connected to MailerLite.
-        </p>
-      </div>
+      <form class="newsletter-form js-newsletter-form" style="margin-top:2.5rem;">
+        <input
+          class="newsletter-input"
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+          aria-label="Email address"
+          style="background: var(--color-bg-white); color: var(--color-text-primary); border-color: var(--color-border);"
+        />
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+      </form>
     </div>
   </section>
+
+<script>
+  import '../scripts/newsletter-form.ts';
+</script>
 </BaseLayout>
