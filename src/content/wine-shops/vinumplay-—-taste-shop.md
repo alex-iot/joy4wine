@@ -6,7 +6,10 @@ date: 2026-04-25
 location: Málaga · La Malagueta
 best_for: wine tasting by the glass, beachside afternoons, tapas and wine
 tags:
-  - Wine Bar   - Wine Shop   - La Malagueta   - Enomatic
+  - Wine Bar
+  - Wine Shop
+  - La Malagueta
+  - Enomatic
 draft: false
 ---
 VinumPlay occupies a sweet spot that few places in Málaga manage: a wine bar and shop in one, just steps from La Malagueta beach. The location alone earns it a place on the list — but there's a genuinely compelling reason to visit beyond the sea view.
