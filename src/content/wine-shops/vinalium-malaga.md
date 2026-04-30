@@ -5,7 +5,9 @@ date: 2026-04-30
 location: Málaga · Soho
 best_for: Expert advice, wide range across all budgets, gifts, chilled wines to go
 tags:
-  - "- Wine Shop   - Soho   - Editor's Pick"
+  - Wine Shop
+  - Soho
+  - Editor's Pick
 draft: false
 ---
 One of the finest wine shops in Málaga isn't the biggest one. Tucked into the Soho neighbourhood, Vinalium is compact, carefully stocked, and run by an owner whose knowledge of her selection is genuinely hard to match — the kind of place that becomes a regular stop once you've discovered it.
