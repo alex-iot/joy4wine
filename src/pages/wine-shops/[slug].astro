@@ -12,12 +12,6 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-
-const priceLabels: Record<string, string> = {
-  budget: 'Budget',
-  mid: 'Mid-range',
-  premium: 'Premium',
-};
 ---
 <PostLayout
   title={entry.data.title}
@@ -32,8 +26,6 @@ const priceLabels: Record<string, string> = {
       <span class="post-meta-value">{entry.data.location}</span>
       <span class="post-meta-label">Best for</span>
       <span class="post-meta-value">{entry.data.best_for}</span>
-      <span class="post-meta-label">Price level</span>
-      <span class="post-meta-value">{priceLabels[entry.data.price_level]}</span>
     </div>
   </Fragment>
   <Content />

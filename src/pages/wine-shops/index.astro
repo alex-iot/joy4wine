@@ -6,11 +6,6 @@ import WineShopIcon from '../../components/icons/WineShopIcon.astro';
 const shops = (await getCollection('wine-shops', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-const priceLabels: Record<string, string> = {
-  budget: 'Budget',
-  mid: 'Mid-range',
-  premium: 'Premium',
-};
 ---
 <BaseLayout
   title="Wine Shops — Joy4Wine"
@@ -31,7 +26,6 @@ const priceLabels: Record<string, string> = {
             <a href={`/wine-shops/${shop.slug}/`} class="post-item">
               <div class="post-item-header">
                 <h2 class="post-item-title">{shop.data.title}</h2>
-                <span class="badge">{priceLabels[shop.data.price_level]}</span>
               </div>
               <p class="post-item-subtitle">{shop.data.subtitle}</p>
               <div class="post-item-meta">

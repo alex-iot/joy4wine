@@ -20,7 +20,7 @@ collections:
       - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "Location", name: "location", widget: "string", hint: "e.g. Málaga centro" }
       - { label: "Best For", name: "best_for", widget: "string", hint: "e.g. everyday wine buying, gifts, local Málaga wines" }
-      - { label: "Price Level", name: "price_level", widget: "select", options: ["budget", "mid", "premium"] }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
       - { label: "Draft", name: "draft", widget: "boolean", default: true }
       - { label: "Body", name: "body", widget: "markdown" }
 

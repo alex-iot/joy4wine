@@ -8,7 +8,7 @@ const wineShops = defineCollection({
     date: z.date(),
     location: z.string(),
     best_for: z.string(),
-    price_level: z.enum(['budget', 'mid', 'premium']),
+    tags: z.array(z.string()).optional(),
     draft: z.boolean().default(true),
   }),
 });
