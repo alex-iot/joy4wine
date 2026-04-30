@@ -12,15 +12,25 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+const formattedDate = entry.data.date.toLocaleDateString('en-GB', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const hasTags = entry.data.tags && entry.data.tags.length > 0;
 ---
 <PostLayout
   title={entry.data.title}
   description={entry.data.subtitle}
   date={entry.data.date}
   collection="wine-shops"
+  showDate={false}
 >
   <Fragment slot="meta">
     <p class="post-subtitle">{entry.data.subtitle}</p>
+    <p class="shop-date">{formattedDate}</p>
     <div class="shop-meta">
       <div class="shop-meta-field">
         <span class="shop-meta-label">Location</span>
@@ -31,18 +41,28 @@ const { Content } = await entry.render();
         <span class="shop-meta-value">{entry.data.best_for}</span>
       </div>
     </div>
-    {entry.data.tags && entry.data.tags.length > 0 && (
+  </Fragment>
+  <Content />
+  {hasTags && (
+    <div class="shop-tags-footer">
+      <span class="shop-meta-label">Filed under</span>
       <div class="shop-tags">
-        {entry.data.tags.map(tag => (
+        {entry.data.tags!.map(tag => (
           <span class="shop-tag">{tag}</span>
         ))}
       </div>
-    )}
-  </Fragment>
-  <Content />
+    </div>
+  )}
 </PostLayout>
 
 <style>
+  .shop-date {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    margin: 0.25rem 0 0.75rem;
+  }
+
   .shop-meta {
     display: flex;
     gap: 2rem;
@@ -70,11 +90,17 @@ const { Content } = await entry.render();
     color: var(--color-text-primary);
   }
 
+  .shop-tags-footer {
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+    margin-top: 2rem;
+  }
+
   .shop-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
   }
 
   .shop-tag {

@@ -51,14 +51,14 @@ function collectionLabel(col: string): string {
         corporate agenda.
       </p>
       <div class="btn-group">
-        <a href="/bottle-notes/" class="btn btn--primary">Read the latest notes</a>
+        <a href="#latest-notes" class="btn btn--primary">Read the latest notes</a>
         <a href="/newsletter/" class="btn btn--secondary">Subscribe by email</a>
       </div>
     </div>
   </section>
 
   <!-- Latest notes -->
-  <section class="section">
+  <section id="latest-notes" class="section">
     <div class="container">
       <h2 class="section-title">Latest notes</h2>
       {allPosts.length > 0 ? (
