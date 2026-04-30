@@ -21,12 +21,70 @@ const { Content } = await entry.render();
 >
   <Fragment slot="meta">
     <p class="post-subtitle">{entry.data.subtitle}</p>
-    <div class="post-meta">
-      <span class="post-meta-label">Location</span>
-      <span class="post-meta-value">{entry.data.location}</span>
-      <span class="post-meta-label">Best for</span>
-      <span class="post-meta-value">{entry.data.best_for}</span>
+    <div class="shop-meta">
+      <div class="shop-meta-field">
+        <span class="shop-meta-label">Location</span>
+        <span class="shop-meta-value">{entry.data.location}</span>
+      </div>
+      <div class="shop-meta-field">
+        <span class="shop-meta-label">Best for</span>
+        <span class="shop-meta-value">{entry.data.best_for}</span>
+      </div>
     </div>
+    {entry.data.tags && entry.data.tags.length > 0 && (
+      <div class="shop-tags">
+        {entry.data.tags.map(tag => (
+          <span class="shop-tag">{tag}</span>
+        ))}
+      </div>
+    )}
   </Fragment>
   <Content />
 </PostLayout>
+
+<style>
+  .shop-meta {
+    display: flex;
+    gap: 2rem;
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .shop-meta-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .shop-meta-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .shop-meta-value {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--color-text-primary);
+  }
+
+  .shop-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .shop-tag {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: var(--color-bg);
+    border: 0.5px solid var(--color-border);
+    padding: 0.25rem 0.625rem;
+    border-radius: 2px;
+  }
+</style>
