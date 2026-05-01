@@ -180,17 +180,51 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: var(--font-sans);
 }
 
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-col--left {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-col--right {
+  flex-shrink: 0;
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-col--right .btn-group {
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .hero-inner {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .hero-col--right {
+    width: 100%;
+  }
+}
+
 .hero-heading {
-  font-size: clamp(2.4rem, 5vw, 3.75rem);
+  font-size: 2.25rem;
   margin-bottom: 1.25rem;
-  max-width: 15ch;
+  max-width: 20ch;
 }
 
 .hero-body {
   font-size: 1.1rem;
   color: var(--color-text-secondary);
   max-width: 52ch;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 /* === Sections === */
