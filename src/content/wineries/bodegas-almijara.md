@@ -5,7 +5,7 @@ date: 2025-01-15
 region: Axarquía
 grapes: Moscatel, Pedro Ximénez
 price_range: €8–18
-draft: false
+draft: true
 ---
 
 Placeholder entry. Bodegas Almijara works with the indigenous varieties that have made the Axarquía region quietly famous for centuries: Moscatel de Alejandría and Pedro Ximénez, grown at altitude on the distinctive slate soils that give the wines their distinctive mineral character.
