@@ -9,6 +9,7 @@ const wineShops = defineCollection({
     location: z.string(),
     best_for: z.string(),
     tags: z.array(z.string()).optional(),
+    image: z.string().optional(),
     draft: z.boolean().default(true),
   }),
 });
@@ -22,6 +23,7 @@ const wineries = defineCollection({
     region: z.string(),
     grapes: z.string(),
     price_range: z.string(),
+    image: z.string().optional(),
     draft: z.boolean().default(true),
   }),
 });
@@ -33,6 +35,7 @@ const guides = defineCollection({
     subtitle: z.string(),
     date: z.date(),
     topic: z.string(),
+    image: z.string().optional(),
     draft: z.boolean().default(true),
   }),
 });
@@ -47,6 +50,7 @@ const bottleNotes = defineCollection({
     vintage: z.number(),
     price_approx: z.string(),
     date: z.date(),
+    image: z.string().optional(),
     draft: z.boolean().default(true),
   }),
 });

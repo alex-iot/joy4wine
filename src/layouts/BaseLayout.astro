@@ -6,12 +6,20 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
+  ogType?: string;
+  jsonLd?: string;
 }
 
 const {
-  title = 'Joy4Wine — Málaga Wine Guide',
+  title = 'Joy4Wine | Wine in Málaga',
   description = 'A personal editorial guide to wine in Málaga and the Costa del Sol.',
+  ogImage,
+  ogType = 'website',
+  jsonLd,
 } = Astro.props;
+
+const canonicalUrl = Astro.url.href;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +28,24 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Joy4Wine" />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={ogImage} />}
+
+    {jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
   </head>
   <body>
     <Nav />

@@ -19,6 +19,20 @@ const allPosts = [
   ...allBottleNotes.map(p => ({ ...p, _collection: 'bottle-notes' })),
 ].sort((a, b) => b.data.date.getTime() - a.data.date.getTime()).slice(0, 3);
 
+const siteUrl = (Astro.site?.toString() ?? 'https://joy4wine.com').replace(/\/$/, '');
+const websiteJsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Joy4Wine',
+  url: siteUrl,
+  description: 'A personal editorial guide to wine shops, wineries, and bottles in Málaga and the Costa del Sol.',
+  publisher: {
+    '@type': 'Person',
+    name: 'Joy4Wine',
+    url: `${siteUrl}/about/`,
+  },
+});
+
 function getDescription(post: { data: Record<string, unknown> }): string {
   if (typeof post.data.subtitle === 'string') return post.data.subtitle;
   if (typeof post.data.producer === 'string') return `${post.data.producer} · ${post.data.vintage ?? ''}`;
@@ -37,8 +51,9 @@ function collectionLabel(col: string): string {
 
 ---
 <BaseLayout
-  title="Joy4Wine — Málaga Wine Guide"
+  title="Joy4Wine | Wine in Málaga"
   description="A personal editorial guide to wine shops, wineries, and bottles in Málaga and the Costa del Sol."
+  jsonLd={websiteJsonLd}
 >
   <!-- Hero -->
   <section class="hero">

@@ -7,9 +7,12 @@ interface Props {
   date: Date;
   collection: string;
   showDate?: boolean;
+  ogType?: string;
+  ogImage?: string;
+  jsonLd?: string;
 }
 
-const { title, description, date, collection, showDate = true } = Astro.props;
+const { title, description, date, collection, showDate = true, ogType, ogImage, jsonLd } = Astro.props;
 
 const formattedDate = date.toLocaleDateString('en-GB', {
   year: 'numeric',
@@ -19,7 +22,7 @@ const formattedDate = date.toLocaleDateString('en-GB', {
 
 const collectionLabel = collection.replace(/-/g, ' ');
 ---
-<BaseLayout title={`${title} — Joy4Wine`} description={description}>
+<BaseLayout title={`${title} — Joy4Wine | Wine in Málaga`} description={description} ogType={ogType} ogImage={ogImage} jsonLd={jsonLd}>
   <article class="post">
     <div class="container--narrow">
       <nav class="post-breadcrumb" aria-label="Breadcrumb">

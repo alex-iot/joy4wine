@@ -20,6 +20,34 @@ const formattedDate = entry.data.date.toLocaleDateString('en-GB', {
 });
 
 const hasTags = entry.data.tags && entry.data.tags.length > 0;
+
+const siteUrl = (Astro.site?.toString() ?? 'https://joy4wine.com').replace(/\/$/, '');
+const pageUrl = `${siteUrl}/wine-shops/${entry.slug}/`;
+const jsonLd = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'LocalBusiness',
+      name: entry.data.title,
+      description: entry.data.subtitle,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: entry.data.location,
+        addressCountry: 'ES',
+      },
+      url: pageUrl,
+      ...(entry.data.image ? { image: `${siteUrl}${entry.data.image}` } : {}),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteUrl}/` },
+        { '@type': 'ListItem', position: 2, name: 'Wine Shops', item: `${siteUrl}/wine-shops/` },
+        { '@type': 'ListItem', position: 3, name: entry.data.title, item: pageUrl },
+      ],
+    },
+  ],
+});
 ---
 <PostLayout
   title={entry.data.title}
@@ -27,6 +55,8 @@ const hasTags = entry.data.tags && entry.data.tags.length > 0;
   date={entry.data.date}
   collection="wine-shops"
   showDate={false}
+  ogImage={entry.data.image}
+  jsonLd={jsonLd}
 >
   <Fragment slot="meta">
     <p class="post-subtitle">{entry.data.subtitle}</p>
