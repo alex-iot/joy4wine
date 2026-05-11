@@ -25,15 +25,15 @@ const guides = (await getCollection('guides', ({ data }) => !data.draft))
             <a href={`/guides/${guide.slug}/`} class="post-item">
               <div class="post-item-header">
                 <h2 class="post-item-title">{guide.data.title}</h2>
-                <div class="guide-index-topics">
-                  {guide.data.topic.split(',').map((t: string) => (
-                    <span class="badge">{t.trim()}</span>
-                  ))}
-                </div>
               </div>
               <p class="post-item-subtitle">{guide.data.subtitle}</p>
               <div class="post-item-meta">
                 <span>{guide.data.date.toLocaleDateString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                <div class="guide-index-topics">
+                  {guide.data.topic.split(',').map((t: string) => (
+                    <span class="guide-index-topic">{t.trim()}</span>
+                  ))}
+                </div>
               </div>
             </a>
           ))}
@@ -52,6 +52,16 @@ const guides = (await getCollection('guides', ({ data }) => !data.draft))
     display: flex;
     flex-wrap: wrap;
     gap: 0.3rem;
-    flex-shrink: 0;
+  }
+
+  .guide-index-topic {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: var(--color-bg);
+    border: 0.5px solid var(--color-border);
+    padding: 0.25rem 0.625rem;
+    border-radius: 2px;
   }
 </style>
