@@ -1,12 +1,14 @@
 ---
 title: Five Wines, a Surf Shop, and a Side of Málaga You Don't Expect
-subtitle: A wine tasting evening in Rincón de la Victoria — and what it says about a quietly growing scene.
+subtitle: A wine tasting evening in Rincón de la Victoria — and what it says
+  about a quietly growing scene.
 date: 2026-05-09
 topic: Guides, Wine Scene, Tasting Events, Rincón de la Victoria, Desde La Viña
 draft: false
 ---
-
 There's a surf and skate shop in Rincón de la Victoria, a few steps from the beach, that on a warm Saturday evening last week had twenty people standing around with wine glasses, discussing the merits of lesser-known Spanish grape varieties. If that sounds like an unlikely combination, it felt like a perfectly natural one.
+
+![](/images/santos-tasting-1.jpg "Setting of the wine tasting in the surf shop cafe.")
 
 The event was organised by Todos Santos — the surf shop — but run by Pablo, a former sommelier from Nubo who now works for a wine importer and runs wine tasting events as a side project under the name Desde La Viña. The format was relaxed: five wines, two bottles each, with Pablo walking the group through the history of the regions and producers rather than leading a formal tasting. Questions were encouraged. Discussions followed naturally.
 
@@ -16,11 +18,11 @@ The crowd was mixed — a majority of women in their late thirties and early for
 
 ## The wines
 
-- **Terraprima Blanc 2023** — Can Ràfols dels Caus, DO Penedès *(white)*
-- **Ecléctico 2023** — Hato y Garabato, DO Arribes *(white)*
-- **Arraiano Tinto 2022** — Cume do Avia, DO Ribeiro *(red)*
-- **Camino Real 2023** — Guímaro, DO Ribeira Sacra *(red)*
-- **L'Enclos de Peralba Pet Nat 2025** — Vino de España, Penedès *(pét nat)*
+* **Terraprima Blanc 2023** — Can Ràfols dels Caus, DO Penedès *(white)*
+* **Ecléctico 2023** — Hato y Garabato, DO Arribes *(white)*
+* **Arraiano Tinto 2022** — Cume do Avia, DO Ribeiro *(red)*
+* **Camino Real 2023** — Guímaro, DO Ribeira Sacra *(red)*
+* **L'Enclos de Peralba Pet Nat 2025** — Vino de España, Penedès *(pét nat)*
 
 The welcome glass was a white from Rueda, poured from a magnum while people arrived — a thoughtful touch that set the tone without rushing anyone in. After the formal tasting, the remaining bottles were opened for everyone to help themselves, and Pablo added a few bonus French wines to round out the evening. Nobody left in a hurry.
 
