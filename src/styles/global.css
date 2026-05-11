@@ -582,6 +582,28 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .prose li { margin-bottom: 0.4em; }
 
+.prose img {
+  width: 100%;
+  margin: 1.5rem 0;
+  border: 1px solid var(--color-border);
+}
+
+/* Remove paragraph's own bottom margin when it wraps only an image */
+.prose p:has(> img:only-child) {
+  margin-bottom: 0;
+}
+
+/* Caption: <em> as the sole child of a paragraph that follows an image paragraph */
+.prose p:has(> img) + p > em:only-child {
+  display: block;
+  text-align: center;
+  font-size: 0.825rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: -0.75rem;
+  margin-bottom: 1.5rem;
+}
+
 /* === Empty state === */
 .empty-state {
   text-align: center;
