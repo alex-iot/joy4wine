@@ -12,6 +12,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+const topics = entry.data.topic.split(',').map((t: string) => t.trim()).filter(Boolean);
 
 const siteUrl = (Astro.site?.toString() ?? 'https://joy4wine.com').replace(/\/$/, '');
 const pageUrl = `${siteUrl}/guides/${entry.slug}/`;
@@ -60,8 +61,30 @@ const jsonLd = JSON.stringify({
     <p class="post-subtitle">{entry.data.subtitle}</p>
     <div class="post-meta">
       <span class="post-meta-label">Topic</span>
-      <span class="post-meta-value">{entry.data.topic}</span>
+      <div class="guide-topics">
+        {topics.map(t => <span class="guide-topic">{t}</span>)}
+      </div>
     </div>
   </Fragment>
   <Content />
 </PostLayout>
+
+<style>
+  .guide-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .guide-topic {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    background: var(--color-bg);
+    border: 0.5px solid var(--color-border);
+    padding: 0.25rem 0.625rem;
+    border-radius: 2px;
+  }
+</style>

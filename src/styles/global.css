@@ -604,6 +604,18 @@ img { max-width: 100%; height: auto; display: block; }
   margin-bottom: 1.5rem;
 }
 
+.prose blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--color-accent);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--color-accent);
+}
+
+.prose blockquote p { margin-bottom: 0; }
+
 /* === Empty state === */
 .empty-state {
   text-align: center;
