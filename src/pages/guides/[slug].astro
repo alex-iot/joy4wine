@@ -59,25 +59,40 @@ const jsonLd = JSON.stringify({
 >
   <Fragment slot="meta">
     <p class="post-subtitle">{entry.data.subtitle}</p>
-    <div class="post-meta">
-      <span class="post-meta-label">Topic</span>
-      <div class="guide-topics">
-        {topics.map(t => <span class="guide-topic">{t}</span>)}
-      </div>
-    </div>
   </Fragment>
   <Content />
+  {topics.length > 0 && (
+    <div class="guide-tags-footer">
+      <span class="guide-meta-label">Filed under</span>
+      <div class="guide-tags">
+        {topics.map(t => <span class="guide-tag">{t}</span>)}
+      </div>
+    </div>
+  )}
 </PostLayout>
 
 <style>
-  .guide-topics {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    align-items: center;
+  .guide-tags-footer {
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+    margin-top: 2rem;
   }
 
-  .guide-topic {
+  .guide-meta-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .guide-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .guide-tag {
     font-size: 9px;
     letter-spacing: 3px;
     text-transform: uppercase;
