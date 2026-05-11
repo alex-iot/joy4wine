@@ -14,7 +14,7 @@ The event was organised by Todos Santos — the surf shop — but run by Pablo, 
 
 > The kind of evening that reminds you wine is more interesting when it's shared with people who are curious rather than knowledgeable.
 
-The crowd was mixed — a majority of women in their late thirties and early forties, some couples in their fifties, a few seniors. My friend Kris, who brought me along, ended up winning the raffle at the end of the evening and took home a bottle that was the envy of the room. The selection itself was the most interesting part: five wines, all from smaller, less-travelled Spanish regions, the kind of bottles you rarely see on a restaurant list.
+The crowd was mixed — mostly women, with a few couples and some older regulars who clearly knew their way around a wine glass. My friend Kris, who brought me along, ended up winning the raffle at the end of the evening and took home a bottle that was the envy of the room. The selection itself was the most interesting part: five wines, all from smaller, less-travelled Spanish regions, the kind of bottles you rarely see on a restaurant list.
 
 ![Pablo, our wine tasting host in action.](/images/santos-tasting-2.jpg "Pablo, our wine tasting host in action.")
 
