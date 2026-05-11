@@ -10,7 +10,7 @@ There's a surf and skate shop in Rincón de la Victoria, a few steps from the be
 
 ![Setting of the wine tasting in the surf shop cafe.](/images/santos-tasting-1.jpg "Setting of the wine tasting in the surf shop cafe.")
 
-The event was organised by Todos Santos — the surf shop — but run by Pablo, a former sommelier from Nubo who now works for a wine importer and runs wine tasting events as a side project under the name Desde La Viña. The format was relaxed: five wines, two bottles each, with Pablo walking the group through the history of the regions and producers rather than leading a formal tasting. Questions were encouraged. Discussions followed naturally.
+The event was organised by Todos Santos — the surf shop — but run by Pablo, a former sommelier from Nobu who now works for a wine importer and runs wine tasting events as a side project under the name Desde La Viña. The format was relaxed: five wines, two bottles each, with Pablo walking the group through the history of the regions and producers rather than leading a formal tasting. Questions were encouraged. Discussions followed naturally.
 
 > The kind of evening that reminds you wine is more interesting when it's shared with people who are curious rather than knowledgeable.
 
