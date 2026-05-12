@@ -21,6 +21,9 @@ document.querySelectorAll<HTMLFormElement>('.js-newsletter-form').forEach((form)
         btn.textContent = "You're in!";
         input.value = '';
         input.disabled = true;
+        if (typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'newsletter_signup', { method: 'homepage_form' });
+        }
       } else {
         const data = await res.json().catch(() => ({}));
         btn.textContent = (data as { error?: string }).error ?? 'Something went wrong';
