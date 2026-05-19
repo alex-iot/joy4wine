@@ -8,7 +8,7 @@ price_approx: " €20-25"
 date: 2026-05-11
 draft: false
 ---
-![](/images/capuchina-pv23-label.jpg)
+![](/images/capuchina-pv23-label.jpg "Capuchina Vieja Petit Verdot 2023")
 
 Moving to Málaga has meant a lot of catching up — working through bottles from the regions I knew well before: Ribera del Duero, Toro, Bierzo. But the more time I spend here, the more I find myself drawn to what's on the doorstep.
 
