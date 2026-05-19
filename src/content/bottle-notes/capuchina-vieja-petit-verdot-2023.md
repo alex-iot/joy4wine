@@ -6,8 +6,9 @@ grape: Petit Verdot
 vintage: 2023
 price_approx: " €20-25"
 date: 2026-05-11
-draft: true
+draft: false
 ---
+![](/images/capuchina-pv23-label.jpg)
 
 Moving to Málaga has meant a lot of catching up — working through bottles from the regions I knew well before: Ribera del Duero, Toro, Bierzo. But the more time I spend here, the more I find myself drawn to what's on the doorstep.
 
