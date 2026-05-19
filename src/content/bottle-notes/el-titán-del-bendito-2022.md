@@ -6,7 +6,7 @@ grape: Tinta de Toro (Tempranillo)
 vintage: 2022
 price_approx: €50-55
 date: 2026-05-19
-draft: true
+draft: false
 ---
 Some bottles carry more than just wine. This one carries a memory.
 
@@ -23,3 +23,5 @@ The fruit is dark and dense — blackberry, black plum, a core of something almo
 I decanted for an hour, but the wine kept evolving long after that. The tannins are the most interesting part: fine-grained and almost silky at first, they gradually take on more grip and presence as time passes. This is a wine that rewards patience — open it, pour it, and leave it alone for a while. It will come to you.
 
 Not an everyday bottle. But for the right occasion, with the right people, there are few better.
+
+![](/images/titan-label.jpg)
