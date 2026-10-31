@@ -6,7 +6,7 @@ grape: Syrah, Cabernet Sauvignon, Graciano
 vintage: 2019
 price_approx: €17
 date: 2026-10-31
-draft: true
+draft: false
 ---
 I bought my first bottle of Altocielo on a local recommendation, and it didn’t go to plan. The cork was faulty. The wine was still drinkable, but the fruit was muted and most of the fun had gone out of it. Still, there was enough inside to make me curious, especially the structure and full body, which gave the wine a solid backbone. So I bought a second bottle to give it a fair chance. I’m glad I did: this time the full flavours unfolded to complement that backbone.
 
