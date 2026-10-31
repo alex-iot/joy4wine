@@ -19,3 +19,7 @@ The nose has a lot going on. Wild flowers first, then clove, black pepper and ch
 On the palate it’s full and pronounced. The tannins are still high and grippy, but time has taken some of the edge off them, and they feel tamer than they would have a few years ago. The finish is medium-plus, the menthol and cocoa staying on a while after.
 
 Seven years on, I was surprised by how well it has evolved. It’s in a good place now, but I wouldn’t hold on to it much longer. At the same time, I’d have liked to try it a bit younger, to see where it started from. Give it some air and pour it with something that can stand up to it. Rabo de toro would do nicely with it.
+
+
+
+![](/images/altocielo2019.jpeg)
