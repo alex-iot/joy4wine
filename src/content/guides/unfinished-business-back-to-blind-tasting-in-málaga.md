@@ -34,17 +34,17 @@ It’s a busy session, and it doesn’t let up.
 
 The first round was five whites, four fortified wines and three sparkling. The whites were all Chardonnay, and together they showed the point of the exercise well. They ranged from a €9 Pays d’Oc to an €85 Chassagne-Montrachet Premier Cru and a €120 Napa Valley, with Yarra Valley and Elgin in between. It was the same grape making very different wines, and that price spread is exactly what you’re meant to pick up blind. The fortified wines covered Sherry, Madeira and white Port. The sparkling flight was all Champagne, topped by a 2012 Taittinger Comtes de Champagne.
 
-![](/images/mater-tasting-first-flight.jpeg "Round one: twelve glasses, one grid, and the clock running.")
+![](/images/mater-tasting-first-flight.jpeg "The reveal, round one: five Chardonnays, four fortified wines and three Champagnes.")
 
 The second round was built differently: three wines from a single country, three classic European origins, and then six with nothing connecting them at all. That last group was a mixed bag, running from a Marlborough Sauvignon Blanc to a Barolo and a 20-year-old tawny Port, and it’s the hardest kind of flight to taste blind, because there’s no clue to lean on.
 
-\[Photo: round 2 bottles. Caption: Round two, from Châteauneuf-du-Pape Blanc to a 20-year-old tawny.]
+![]( "Round two, from Châteauneuf-du-Pape Blanc to a 20-year-old tawny.")
 
 **What I took away**
 
 As a refresher, it was exactly what I needed. Jonas shared some good tips and mental models for blind tasting. With the Champagnes, for example, the first question isn’t the house or the grape but the tier: is this a non-vintage, a vintage or a prestige cuvée? Place the wine in its quality level first, and the rest of the deduction has something to build on. It also reminded me, quite bluntly, how much work I still have to do before the tasting exams.
 
-\[Photo: Jonas pouring at the whiteboard. Caption: Jonas working through the Champagne flight: non-vintage, vintage or prestige cuvée?]
+![](/images/mater-tasting-jonas.jpeg "Working through the Champagne flight: non-vintage, vintage or prestige cuvée?")
 
 Most of all, it whetted my appetite for more, and gave me the motivation I needed to get back into my studies properly.
 
