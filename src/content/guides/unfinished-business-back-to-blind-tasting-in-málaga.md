@@ -18,7 +18,9 @@ That’s how I ended up at the Iberian Wine Academy on Calle Eslava. It’s run 
 
 The session I joined on 12 October was the twelfth. Sixteen of us sat around the table, some from as far away as Granada and Córdoba. Having something like this so close to home is a piece of luck I don’t take for granted.
 
-\[Photo: selfie in the tasting room. Caption: Sixteen of us, 24 wines, one long morning.]
+
+
+![](/images/master-tasting-personal-shot.jpeg "Sixteen of us, 24 wines, one long morning.")
 
 **How it works**
 
