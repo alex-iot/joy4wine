@@ -4,7 +4,7 @@ subtitle: "Twenty-four wines, sixteen students and a Master of Wine: getting my
   palate back in shape for the Diploma"
 date: 2026-11-01
 topic: Advanced wine tasting
-draft: true
+draft: false
 ---
 Halfway through my WSET Diploma, we moved to Málaga. Something had to give, and it was D3, the Wines of the World exam and the hardest part of the Diploma. I was booked to sit it at the end of last year. I didn’t.
 
