@@ -28,13 +28,13 @@ The format mirrors the exams. There are twenty-four wines, served in two rounds 
 
 It’s a busy session, and it doesn’t let up.
 
-\[Photo: glasses 1–12 with the grid. Caption: Round one: twelve glasses, one grid, and the clock running.]
+![](/images/master-tasting-glasses.jpeg "Round one: twelve glasses, one grid, and the clock running.")
 
 **What was in the glass**
 
 The first round was five whites, four fortified wines and three sparkling. The whites were all Chardonnay, and together they showed the point of the exercise well. They ranged from a €9 Pays d’Oc to an €85 Chassagne-Montrachet Premier Cru and a €120 Napa Valley, with Yarra Valley and Elgin in between. It was the same grape making very different wines, and that price spread is exactly what you’re meant to pick up blind. The fortified wines covered Sherry, Madeira and white Port. The sparkling flight was all Champagne, topped by a 2012 Taittinger Comtes de Champagne.
 
-\[Photo: round 1 bottles. Caption: The reveal, round one: five Chardonnays, four fortified wines and three Champagnes.]
+![](/images/mater-tasting-first-flight.jpeg "Round one: twelve glasses, one grid, and the clock running.")
 
 The second round was built differently: three wines from a single country, three classic European origins, and then six with nothing connecting them at all. That last group was a mixed bag, running from a Marlborough Sauvignon Blanc to a Barolo and a 20-year-old tawny Port, and it’s the hardest kind of flight to taste blind, because there’s no clue to lean on.
 
